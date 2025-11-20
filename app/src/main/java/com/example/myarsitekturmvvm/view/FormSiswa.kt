@@ -55,4 +55,21 @@ fun FormSiswa(
                 )
             )
         }
-    )
+    ) { isiRuang ->
+
+        Column(
+            modifier = Modifier.padding(isiRuang),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+
+            // 🔹 Nama
+            OutlinedTextField(
+                value = txtNama,
+                onValueChange = { txtNama = it },
+                label = { Text("Nama Lengkap") },
+                singleLine = true,
+                modifier = Modifier
+                    .width(350.dp)
+                    .padding(top = 20.dp)
+            )
+
