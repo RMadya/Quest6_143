@@ -64,4 +64,11 @@ fun SiswaApp(
     }
 }
 
-p
+private fun cancelAndBackToFormulirku(
+    navController: NavHostController
+) {
+    navController.popBackStack(
+        route = Navigasi.Formulirku.name,
+        inclusive = false
+    )
+}
