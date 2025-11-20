@@ -94,4 +94,31 @@ fun FormSiswa(
                 }
             }
 
+            Spacer(Modifier.height(20.dp))
 
+            // 🔹 Alamat
+            OutlinedTextField(
+                value = txtAlamat,
+                onValueChange = { txtAlamat = it },
+                label = { Text("Alamat Lengkap") },
+                singleLine = true,
+                modifier = Modifier.width(350.dp)
+            )
+
+            Spacer(Modifier.height(30.dp))
+
+            Button(
+                onClick = {
+                    val hasil = mutableListOf(txtNama, txtAlamat, txtGender)
+                    OnSubmitBtnClick(hasil)
+                },
+                enabled = txtNama.isNotEmpty() && txtAlamat.isNotEmpty() && txtGender.isNotEmpty(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp)
+            ) {
+                Text("Submit")
+            }
+        }
+    }
+}
